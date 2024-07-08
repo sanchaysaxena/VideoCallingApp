@@ -23,6 +23,7 @@ import com.example.videocall.ui.theme.VideoCallTheme
 import com.example.videocall.video.CallState
 import com.example.videocall.video.VideoCallScreen
 import com.example.videocall.video.VideoCallViewModel
+import io.getstream.video.android.compose.theme.VideoTheme
 import kotlinx.serialization.Serializable
 import org.koin.androidx.compose.koinViewModel
 
@@ -63,7 +64,9 @@ class MainActivity : ComponentActivity() {
                                     }
                                 }
                             }
-                            VideoCallScreen(state = state, onAction = viewModel::onAction)
+                            VideoTheme {
+                                VideoCallScreen(state = state, onAction = viewModel::onAction)
+                            }
                         }
                     }
                 }
